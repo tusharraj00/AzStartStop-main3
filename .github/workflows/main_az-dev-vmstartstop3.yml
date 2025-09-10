@@ -74,7 +74,7 @@ jobs:
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'vmmanager-brbnejbzfwe6fneu.centralindia-01'
+          app-name: 'vmmanager'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
 
