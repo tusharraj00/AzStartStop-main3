@@ -66,15 +66,16 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_85973002AE3248C0A89C4E029642D7E1 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7BF79D61BCF74BA192C9910FB3A6DE9A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_FFA670AEA2DF4BF4B53C93E989EFD64B }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'az-dev-vmstartstop3'
+          app-name: 'vmmanager-brbnejbzfwe6fneu.centralindia-01'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          
+
+        
